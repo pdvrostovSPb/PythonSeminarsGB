@@ -11,15 +11,21 @@
 # Выходные данные
 # В выходной файл OUTPUT.TXT выведите минимальное количество монет, которые нужно перевернуть.
 
-N = 9
-coins_collection = list()
+data_entry = []
+for i in open('input_coins.txt'):
+    data_entry.append(i[:-1])
+
 number_of_tails = 0
-number_of_eagles = 0
-for i in coins_collection:
-    if coins_collection[i] == 1:
+for i in range(1, len(data_entry)):
+    if int(data_entry[i]):
         number_of_tails += 1
+
+with open('output_coins.txt', 'w') as data_output:
+    if number_of_tails < int(data_entry[0]) / 2:
+        data_output.write(str(number_of_tails))
     else:
-        number_of_eagles += 1
+        data_output.write(str(int(data_entry[0]) - number_of_tails))
+
 
 
 
