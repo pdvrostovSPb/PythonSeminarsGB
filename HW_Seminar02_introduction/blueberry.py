@@ -28,15 +28,15 @@ bushes = int(input('Введите количество кустов '))
 blueberry = []
 for i in range(bushes):
     blueberry.append(randint(0, 999))
-print(blueberry)
 
 max_blueberry = 0
 for i in range(len(blueberry) - 1):
-    if (blueberry[i - 1] + blueberry[i] + blueberry[i + 1]) > max_blueberry:
+    if max_blueberry < (blueberry[i - 1] + blueberry[i] + blueberry[i + 1]):
         max_blueberry = blueberry[i - 1] + blueberry[i] + blueberry[i + 1]
 
-if (blueberry[-2] + blueberry[-1] + blueberry[0]) > max_blueberry:
+if max_blueberry < (blueberry[-2] + blueberry[-1] + blueberry[0]):
     max_blueberry = blueberry[-2] + blueberry[-1] + blueberry[0]
+
 with open('output_blueberry.txt', 'w') as data_output:
     data_output.write(str(max_blueberry))
 
