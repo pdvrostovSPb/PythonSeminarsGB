@@ -4,3 +4,13 @@
 # Входной файл INPUT.TXT содержит целое число N (1 < N ≤ 106).
 # Выходные данные
 # В выходной файл OUTPUT.TXT выведите ответ на задачу.
+
+n = int(input("Введите число N "))
+flag = True
+for i in range(2, 7):
+    if flag and not n % i:
+        print('Наименьший натуральный делитель = ', i)
+        flag = False
+if flag:
+    print('Наименьший делитель = ', n)
+
