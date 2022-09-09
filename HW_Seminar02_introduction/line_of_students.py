@@ -15,3 +15,28 @@
 # единственное натуральное число X (X ≤ 200) – рост Пети.
 # Выходные данные
 # В выходной файл OUTPUT.TXT выведите единственное целое число – номер Пети в шеренге учеников.
+from random import randint
+
+students = int(input("Введите количество учеников "))
+heights = []
+for i in range(students):
+    heights.append(randint(160, 190))
+heights.sort(reverse = True)
+
+print(heights)
+
+petr_height = int(input('Введите рост Петра в см '))
+place = 1
+for i in heights:
+    if int(heights[i]) >= petr_height:
+        place += 1
+print('Петино место в шеренге = ', place)
+
+
+
+
+
+
+
+
+
