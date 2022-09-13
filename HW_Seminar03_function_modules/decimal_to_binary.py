@@ -4,3 +4,9 @@
 # - 3 -> 11
 # - 2 -> 10
 
+n = int(input('Введите число: n = '))
+stroka = ''
+while n / 2 > 0:
+    stroka = str(n % 2) + stroka
+    n //= 2
+print(stroka)
