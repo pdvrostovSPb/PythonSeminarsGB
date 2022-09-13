@@ -5,8 +5,8 @@
 # - 2 -> 10
 
 n = int(input('Введите число: n = '))
-stroka = ''
+binary_number = ''
 while n / 2 > 0:
-    stroka = str(n % 2) + stroka
+    binary_number = str(n % 2) + binary_number
     n //= 2
-print(stroka)
+print(binary_number)
