@@ -5,3 +5,13 @@
 # - для k = 8 список будет выглядеть так:
 # [-21 ,13, -8, 5, −3, 2, −1, 1, 0, 1, 1, 2, 3, 5, 8, 13, 21]
 
+from array import array
+
+
+n = int(input('Введите число: n = '))
+fibonacci_numbers = array()
+
+for i in range(2, n):
+    fibonacci_numbers[i] = fibonacci_numbers[i - 1] + fibonacci_numbers[i - 2]
+    fibonacci_numbers.append(fibonacci_numbers[i])
+    
