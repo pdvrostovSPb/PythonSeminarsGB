@@ -26,3 +26,30 @@
 # 220 284
 # Объяснение: 220=1+2+4+71+142 (все делители числа 284);
 # 284=1+2+4+5+10+11+20+22+44+55+110 (все делители числа 220).
+
+def sum_divider(x):
+    sum_divider = 0
+    for i in range(1, x):
+        if x % i == 0:
+            sum_divider += i
+    return sum_divider
+
+with open('input_friendly.txt', 'r') as data_entry:
+    data = data_entry.read().split(' ')
+    m, n = int(data[0]), int(data[1])
+
+
+lst = []
+count = 0
+for i in range(m, n):
+    if m < sum_divider(i) < n:
+        if sum_divider(sum_divider(i)) == i and i != sum_divider(i):
+            lst = [i, sum_divider(i)]
+            count += 1
+            if count%2:
+                with open('output_friendly.txt', 'a') as data_output:
+                    data_output.write(str(lst) + '\n')
+        
+        
+
+
