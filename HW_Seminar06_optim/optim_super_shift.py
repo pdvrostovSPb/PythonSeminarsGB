@@ -17,7 +17,7 @@ from random import randint
 try:
     n = int(input('Введите число N от 1 до 105: N = '))
     k = int(input('Введите число сдвига K от -105 до 105: K = '))
-    list = [randint(-100, 100) for i in range(n)] # применил list comprehension
+    list = [randint(-100, 100) for i in range(n)] # list comprehension
     print(list) # вывод для наглядной проверки последующего ответа
     print(list[(n - k % n):n] + list[:(n - k % n)]) 
 except:
